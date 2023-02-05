@@ -1,0 +1,59 @@
+.hero {
+  margin-bottom: 100px;
+
+  &-introduce {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.11) 0%, rgba(29, 30, 34, 0) 100%);
+  }
+
+  &-say-hello {
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &-img {
+    height: 500px;
+    border-radius: 30px;
+    object-position: bottom;
+  }
+
+  &-img-sub {
+    cursor: pointer;
+    position: absolute;
+    bottom: -5%;
+    left: -5%;
+    animation: rotating 5s linear infinite;
+
+  }
+
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 46.188rem) {
+  .hero {
+    margin-bottom: 50px;
+
+
+
+    &-img {
+      border-radius: 12px;
+      height: auto;
+    }
+
+    &-img-sub {
+      bottom: 0;
+      left: 0;
+      width: 50px !important;
+      height: 50px !important;
+    }
+  }
+}

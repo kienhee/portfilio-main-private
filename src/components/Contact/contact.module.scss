@@ -1,0 +1,34 @@
+.contact{
+  margin-bottom: 50px;
+  &__image{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  &__form {
+    /* From https://css.glass */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      color: #1D1E22;
+  }
+}
+@media only screen and (max-width: 46.188rem){
+  .contact {
+      &__image {
+      
+        border-radius: 12px;
+      }
+  
+      &__form {
+    
+        border-radius: 12px;
+      
+        padding: 10px;
+      }
+    }
+}

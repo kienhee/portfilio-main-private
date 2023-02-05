@@ -1,0 +1,31 @@
+.about{
+  margin-bottom: 100px;
+}
+.img{
+  border-radius: 30px;
+  height: 500px;
+  object-position: bottom;
+}
+.box{
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.add:hover{
+ background-color: rgba(250,250,250,0.2);
+}
+.add{
+  background: rgba(0,0,0,0.5);
+  transition: all 0.25s linear;
+}
+@media only screen and (max-width: 46.188rem){
+  .about {
+      margin-bottom: 50px;
+    }
+  .img{
+    border-radius: 12px;
+    height: auto;
+  }
+    .box {
+      border-radius: 12px;}
+}

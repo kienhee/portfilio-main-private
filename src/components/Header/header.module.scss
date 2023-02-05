@@ -1,0 +1,24 @@
+.bg-header {
+  background: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(6px);
+}
+.logo:hover{
+color: #fff;
+}
+.nav{
+ padding-top: 48px;
+ padding-bottom: 48px;
+}
+.header__link {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 46.188rem){
+  .nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+    }
+.menu{
+  display: none;
+}  
+}
