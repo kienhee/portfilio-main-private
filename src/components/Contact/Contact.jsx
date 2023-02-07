@@ -20,7 +20,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className={`${styles["contact"]} wrap-app`}>
+    <section className={`${styles["contact"]} wrap-app`} id="contact">
       <Row>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="mb-4">
           <img

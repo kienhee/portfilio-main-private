@@ -34,7 +34,7 @@ const ProjectItem = () => {
         />
       </td>
       <td>
-        <i class="bi bi-pencil-square text-warning fs-5 me-2 pointer"></i>
+        <i className="bi bi-pencil-square text-warning fs-5 me-2 pointer"></i>
         <i className="bi bi-trash3 text-danger fs-5 pointer"></i>
       </td>
     </tr>

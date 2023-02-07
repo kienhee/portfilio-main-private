@@ -27,15 +27,12 @@ const Hero = () => {
             continuously improve make me an asset to any team or project."
           </small>
 
-          <button className="btn btn-main">Get in touch</button>
+          <button className="btn btn-main">
+            <a href="#contact" className="text-white">Get in touch</a>
+          </button>
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="  position-relative mb-5">
-          <img
-            className={`${styles["hero-img"]} w-100`}
-            id="hero-img"
-            src={heroImage}
-            alt="Tran Trung Kien"
-          />
+          <img className={`${styles["hero-img"]} w-100`} id="hero-img" src={heroImage} alt="Tran Trung Kien" />
           <svg
             className={`${styles["hero-img-sub"]}`}
             width="100"
