@@ -9,7 +9,6 @@ import validateEmail from "../utils/validateEmail";
 export const AuthLogin = createAsyncThunk("auth/Login", async (data) => {
   const response = await axios.post(AUTH_LOGIN, data);
   if (!validateEmail(data.email)) return notify(false, "Email không đúng định dạng");
-  console.log(response.data.data);
   if (response.data.data && response.data.success === true) {
     notify(response.data.success, response.data.message);
     localStorage.setItem("accessToken-PszOIoxxwFnQgcNb", response.data.data.AccessToken);
