@@ -1,42 +1,38 @@
 /** @format */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Row, Col, FloatingLabel, Button, Form, Table, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { createProject } from "../../redux/projectSlice";
+import { createProject, getallProject } from "../../redux/projectSlice";
 import axios from "axios";
-import notify from "../../utils/notify"
+import notify from "../../utils/notify";
 import ProjectItem from "./ProjectItem";
 export const Projects = () => {
   const dispatch = useDispatch();
-  const project = useSelector(state => state.project)
+  const project = useSelector((state) => state.project);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [github, setGithub] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [validated, setValidated] = useState(false);
+
   const handleImageChange = async (e) => {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append('file', e.target.files[0]);
-    formData.append('upload_preset', 'w4k7gq7v');
+    formData.append("file", e.target.files[0]);
+    formData.append("upload_preset", "w4k7gq7v");
 
     try {
-      const response = await axios.post(
-        'https://api.cloudinary.com/v1_1/djl238ddb/image/upload',
-        formData
-      );
+      const response = await axios.post("https://api.cloudinary.com/v1_1/djl238ddb/image/upload", formData);
       if (response.data && response.data?.secure_url) {
-        notify(true, "Upload Thành công")
+        notify(true, "Upload Thành công");
 
         setImage(response.data.secure_url);
         setLoading(false);
       }
-
     } catch (error) {
-      console.error(error);
       setLoading(false);
     }
   };
@@ -48,19 +44,20 @@ export const Projects = () => {
       setValidated(true);
     } else {
       if (image) {
-        dispatch(createProject({ title, content, github, urlImage: image }))
+        dispatch(createProject({ title, content, github, urlImage: image }));
         setContent("");
-        setTitle("")
-        setImage("")
-        setGithub("")
-      }
-      else {
-        notify(false, "Vui lòng upload hình ảnh")
+        setTitle("");
+        setImage("");
+        setGithub("");
+      } else {
+        notify(false, "Vui lòng upload hình ảnh");
       }
     }
+  };
 
-  }
-
+  useEffect(() => {
+    dispatch(getallProject());
+  }, []);
 
 
   return (
@@ -68,8 +65,13 @@ export const Projects = () => {
       <section className="p-2">
         <Row>
           <Col sx={12} sm={12} md={12} lg={6} xl={6} xxl={6} className="mb-3">
-            <Form className="sticky-top" style={{ top: 15 }} noValidate validated={validated} onSubmit={handleCreateProject}>
-
+            <Form
+              className="sticky-top"
+              style={{ top: 15 }}
+              noValidate
+              validated={validated}
+              onSubmit={handleCreateProject}
+            >
               <FloatingLabel label="Title" className="mb-4 ">
                 <Form.Control type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
               </FloatingLabel>
@@ -81,18 +83,21 @@ export const Projects = () => {
                   as="textarea"
                   style={{ height: "100px" }}
                   value={content}
-                  onChange={(e) => setContent(e.target.value)} required
+                  onChange={(e) => setContent(e.target.value)}
+                  required
                 />
               </FloatingLabel>
 
-              <Button variant="dark" type="submit" disabled={loading || !title || !content || !github || !image}>   <Spinner animation="border" size="sm" variant="light" className={!project.loading && "d-none"} /> Add new project 📂</Button>
-
+              <Button variant="dark" type="submit" disabled={loading || !title || !content || !github || !image}>
+                {" "}
+                <Spinner animation="border" size="sm" variant="light" className={!project.loading && "d-none"} /> Add
+                new project 📂
+              </Button>
             </Form>
           </Col>
           <Col sx={12} sm={12} md={12} lg={6} xl={6} xxl={6} className="mb-3">
             <div>
               <div className="mb-3">
-
                 <input className={`form-control form-control-sm`} type="file" onChange={handleImageChange} />
               </div>
               {loading && <p>Loading...</p>}
@@ -114,9 +119,15 @@ export const Projects = () => {
             </tr>
           </thead>
           <tbody>
-            <ProjectItem />
-            <ProjectItem />
-            <ProjectItem />
+            {project?.projects?.data.map((item) => (
+              <ProjectItem
+                key={item.id}
+                title={item.title}
+                content={item.content}
+                id={item.id}
+                urlImage={item.urlImage}
+              />
+            ))}
           </tbody>
         </Table>
       </section>

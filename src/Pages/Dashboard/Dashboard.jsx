@@ -19,7 +19,7 @@ function Dashboard() {
   return (
     <Container className=" pt-5 text-dark" fluid>
       <Row>
-        <Col md={3} >
+        <Col md={3}>
           <div className="sticky-top profile-menu d-flex flex-column align-items-center" style={{ top: 15 }}>
             <img
               src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/319694582_712904400141830_9220117224681003804_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qSUtQHPGPAIAX_1tVWi&_nc_ht=scontent.fhan2-5.fna&oh=00_AfB_aW4Yk2bfIBMs3i4kY2f2pvt7iU3LyDMtRxdR8CTLiA&oe=63E3F008"
@@ -43,13 +43,13 @@ function Dashboard() {
           </div>
         </Col>
         <Col md={9} className="profile-content">
-          <Tab.Container id="profile-tabs" defaultActiveKey="about">
+          <Tab.Container id="profile-tabs" defaultActiveKey="projects">
             <Row>
               <Col md={12}>
                 <Nav variant="tabs">
-                  <Nav.Item>
+                  {/* <Nav.Item>
                     <Nav.Link eventKey="about">About</Nav.Link>
-                  </Nav.Item>
+                  </Nav.Item> */}
                   <Nav.Item>
                     <Nav.Link eventKey="projects">Projects</Nav.Link>
                   </Nav.Item>
@@ -62,11 +62,11 @@ function Dashboard() {
             <Row className="mt-3">
               <Col md={12}>
                 <Tab.Content>
-                  <Tab.Pane eventKey="about">
+                  {/* <Tab.Pane eventKey="about">
                     <Card className="about-container">
                       <About />
                     </Card>
-                  </Tab.Pane>
+                  </Tab.Pane> */}
                   <Tab.Pane eventKey="projects">
                     <Card className="posts-container">
                       <Projects />
