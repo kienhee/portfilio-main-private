@@ -1,5 +1,6 @@
 .project {
   margin-bottom: 100px;
+
   &__item {
     margin-bottom: 24px;
 
@@ -31,16 +32,17 @@
     cursor: pointer;
 
   }
-    &__content {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 10;
-      /* number of lines to show */
-      line-clamp: 10;
-      -webkit-box-orient: vertical;
-      margin-bottom: 20px;
-    }
+
+  &__content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    /* number of lines to show */
+    line-clamp: 10;
+    -webkit-box-orient: vertical;
+    margin-bottom: 20px;
+  }
 }
 
 .project__item:hover .project__info {
@@ -52,13 +54,16 @@
 @media only screen and (max-width: 46.188rem) {
   .project {
     margin-bottom: 50px;
+
     &__image {
       height: 300px;
       border-radius: 12px;
     }
-&__info{
-  border-radius: 12px;
-}
+
+    &__info {
+      border-radius: 12px;
+    }
+
     &__content {
       overflow: hidden;
       text-overflow: ellipsis;

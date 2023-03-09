@@ -10,7 +10,7 @@ const Hero = () => {
       <Row className="align-items-center">
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className={`${styles["hero-introduce"]} mb-5`}>
           <small className={`${styles["hero-say-hello"]} mb-3 d-block`}>✋ Hello, my name is</small>
-          <h3 className="mb-3 fs-3 fw-bolder">Trung Kien.</h3>
+          <h3 className="mb-3 fs-3 fw-bolder">Tran Trung Kien.</h3>
           <div className="h1 mb-3 fs-1 fw-bolder text-main">
             <Typewriter
               options={{
