@@ -20,9 +20,9 @@ const Projects = () => {
     <section className={`${styles["project"]} wrap-app`}>
       <Heading heading={"My projects"} />
       <Row>
-        {projects.projects?.data.map((project) => (
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} key={project.id} className={`${styles["project__item"]}`}>
-            <div className="position-relative w-100 h-100">
+        {projects.projects?.data?.map((project,index) => (
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} key={index} className={`${styles["project__item"]}`}>
+            <div className="position-relative w-100 h-100" key={project.id}>
               <img src={project.urlImage} alt="Project" className={`${styles["project__image"]}`} tooltip="click" />
               <div className={`${styles["project__info"]} d-flex flex-column`}>
                 <p className={`${styles["project__title"]} fw-bolder fs-4`}>{project.title}</p>
@@ -91,7 +91,7 @@ const Projects = () => {
         ))}
       </Row>
       <div className="d-flex justify-content-center">
-        {projects.length >= 6 && <button className="btn btn-main text-white">Load more</button>}
+        {projects?.length >= 6 && <button className="btn btn-main text-white">Load more</button>}
       </div>
     </section>
   );

@@ -50,7 +50,7 @@ const Skills = () => {
               </p>
             </div>
             <div className="about__skills__icons">
-              {skills.map((skill) => (
+              {skills?.map((skill) => (
                 <div className="about__skills__item" key={skill.id}>
                   <img src={skill.url} alt={skill.url} />
                 </div>

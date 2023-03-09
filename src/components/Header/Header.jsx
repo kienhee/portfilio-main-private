@@ -15,7 +15,7 @@ const Header = () => {
           <a href="/" className={`${styles["logo"]} `}>KienHee</a>
         </h1>
         <ul className={`d-flex gap-4 align-items-center`}>
-          {socials.map((social) => (
+          {socials?.map((social) => (
             <li key={social.id} className={styles["header__link"]}>
               <a href={social.link} target="_blank" rel="noreferrer">
                 <i className={`bi bi-${social.name}`}></i>

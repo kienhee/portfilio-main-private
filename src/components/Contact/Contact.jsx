@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Row, Col, Form, FloatingLabel } from "react-bootstrap";
+import contactImage from "../../assets/images/contact.jpg"
 import styles from "./contact.module.scss";
 export const Contact = () => {
   const [validated, setValidated] = useState(false);
@@ -25,7 +26,7 @@ export const Contact = () => {
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="mb-4">
           <img
             className={`${styles["contact__image"]}`}
-            src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/320563118_2253345844838494_4038838875816898162_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0debeb&_nc_ohc=Tfk6tTPvpSUAX-HUbow&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDxUhwQStakh5BnYb6wU5hLbwkFYfb-3a7Gl4AFmJJb8g&oe=63E2EE37"
+            src={contactImage}
             alt="Contact Image"
           />
         </Col>

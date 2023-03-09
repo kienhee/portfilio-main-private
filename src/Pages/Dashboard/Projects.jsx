@@ -119,7 +119,7 @@ export const Projects = () => {
             </tr>
           </thead>
           <tbody>
-            {project?.projects?.data.map((item) => (
+            {project?.projects?.data?.map((item) => (
               <ProjectItem
                 key={item.id}
                 title={item.title}
